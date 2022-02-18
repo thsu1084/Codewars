@@ -1,9 +1,8 @@
 public class CharacterCounter {
     
-    public CharacterCounter() {
-    }
+  
 
-    public static void validateWord(String word){
+    public static boolean validateWord(String word){
     int[] arr;
     arr=new int[127] ;
     int legnth = word.length();
@@ -24,7 +23,7 @@ public class CharacterCounter {
        for(int x=97;x<123;x++)
            if(ascii==x)
             ascii=ascii-32;
-     // System.out.println(ascii);
+   
 
       for(int j=0;j<127;j++)
       {  
@@ -54,7 +53,7 @@ public class CharacterCounter {
         for(int i=0;i<127;i++)
         if(arr[i]!=count)
            if(arr[i]!=0)
-            System.out.println("false");
+            return false;
     }
     else{
         for(int i=0;i<127;i++)
@@ -68,10 +67,10 @@ public class CharacterCounter {
         for(int i=0;i<127;i++)
         if(arr[i]!=count)
            if(arr[i]!=0)
-            System.out.println("false");
+           return false;
     }
 
-    System.out.println("true");
+    return true;
     }
     
 }
